@@ -13,9 +13,11 @@ taskmanage.py取得计算结果，讲结果打印。
 manager：
 QueueManager(address=('', 5000), authkey='abc')
 
+任务进程要通过网络连接到服务进程，所以要指定服务进程的IP。
 worker:
 server_addr = '127.0.0.1'
 QueueManager(address=(server_addr, 5000), authkey='abc')
+
 
 为了验证分布式的效果，可以在两台机器下分别运行代码，在Linux和Mac下使用"ifconfig"命令查看en0:下的ip地址，填写即可。
 具体代码有详细的注释。
